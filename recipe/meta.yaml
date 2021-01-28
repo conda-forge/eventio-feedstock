@@ -1,5 +1,5 @@
 {% set name = "eventio" %}
-{% set version = "1.4.2" %}
+{% set version = "1.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8f07de50ef4b06e1237ffbcbcd748fee71badf0719cf23c79a4425cd4194f8c1
+  sha256: 360499d62bf2c5df25c928dafc2b78119adcf63acfe4373b45a6e929f518826b
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -37,7 +37,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE.txt
-  summary: 'Read-only python implementation of the eventio / sim_telarray data format'
+  summary: Read-only python implementation of the eventio / sim_telarray data format
 
   description: |
     eventio is a read-only implementation of the eventio / sim_telarray data formats
