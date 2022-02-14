@@ -1,5 +1,5 @@
 {% set name = "eventio" %}
-{% set version = "1.5.1.post2" %}
+{% set version = "1.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 14ffe673c057f95457db6fc1d688f9afe704ea97a222f561a01244209d0a0ebe
+  sha256: bab640a40305f31904ff515a54a79e749a4532bf8688155a04d395581a46aa0a
 
 build:
   number: 1
