@@ -20,6 +20,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - setuptools
   host:
     - python
     - pip
@@ -27,6 +28,8 @@ requirements:
     - cython
     - pytest-runner
     - corsikaio 0.2.*
+    - setuptools
+    - setuptools_scm >=3.4
   run:
     - python
     - {{ pin_compatible('numpy') }}
