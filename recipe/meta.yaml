@@ -27,13 +27,13 @@ requirements:
     - numpy
     - cython
     - pytest-runner
-    - corsikaio 0.2.*
+    - corsikaio 0.3.*
     - setuptools
     - setuptools_scm >=3.4
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - corsikaio 0.2.*
+    - corsikaio 0.3.*
     - zstandard
 
 test:
