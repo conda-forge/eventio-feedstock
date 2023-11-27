@@ -1,5 +1,5 @@
 {% set name = "eventio" %}
-{% set version = "1.11.5" %}
+{% set version = "1.11.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,32 +7,33 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 65630e1e199f1e51b604b514f99b6a8900d49be599597c3b4c4ada0b3aa3ffc9
+  sha256: bb674a9bf89dd372f9d75c8c969874caffeb239a3c7ffb4920d7d3f1b64391cb
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [python_impl == 'pypy']
+  skip: true  # [py<39]
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
+    - python
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy                                  # [build_platform != target_platform]
+    - numpy >=1.25                          # [build_platform != target_platform]
     - {{ compiler('c') }}
     - setuptools
   host:
     - python
     - pip
-    - numpy
+    - numpy >=1.25
     - cython
     - pytest-runner
-    - corsikaio 0.3.*
+    - corsikaio >=0.3.3,<0.5a0
     - setuptools
     - setuptools_scm >=3.4
   run:
     - python
-    - {{ pin_compatible('numpy') }}
+    - numpy >=1.21
     - corsikaio 0.3.*
     - zstandard
 
