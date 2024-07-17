@@ -19,23 +19,22 @@ requirements:
   build:
     - python
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - numpy >=1.25                          # [build_platform != target_platform]
+    - numpy >=2                          # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - setuptools
   host:
     - python
     - pip
-    - numpy >=1.25
+    - numpy >=2
     - cython
-    - pytest-runner
     - corsikaio >=0.3.3,<0.5a0
     - setuptools
     - setuptools_scm >=3.4
   run:
     - python
     - numpy >=1.21
-    - corsikaio 0.3.*
+    - corsikaio >=0.3.3,<0.5a0
     - zstandard
 
 test:
