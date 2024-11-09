@@ -13,7 +13,7 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [python_impl == 'pypy']
-  skip: true  # [py<39]
+  skip: true  # [py<310]
 
 requirements:
   build:
@@ -28,13 +28,13 @@ requirements:
     - pip
     - numpy >=2
     - cython
-    - corsikaio >=0.3.3,<0.5a0
+    - corsikaio >=0.3.3,<0.6a0
     - setuptools
     - setuptools_scm >=3.4
   run:
     - python
     - numpy >=1.21
-    - corsikaio >=0.3.3,<0.5a0
+    - corsikaio >=0.3.3,<0.6a0
     - zstandard
 
 test:
