@@ -1,5 +1,5 @@
 {% set name = "eventio" %}
-{% set version = "1.13.0" %}
+{% set version = "1.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 37306b1af8b4308874a3094beb1de639437bc546db0b0ed5422f41beb7b1a766
+  sha256: d81e922863d7e0f3a2517678382f5b91e44917a9dce03abd0fea245b963432b3
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   skip: true  # [python_impl == 'pypy']
-  skip: true  # [py<39]
+  skip: true  # [py<310]
 
 requirements:
   build:
@@ -28,13 +28,13 @@ requirements:
     - pip
     - numpy >=2
     - cython
-    - corsikaio >=0.3.3,<0.5a0
+    - corsikaio >=0.3.3,<0.6a0
     - setuptools
     - setuptools_scm >=3.4
   run:
     - python
     - numpy >=1.21
-    - corsikaio >=0.3.3,<0.5a0
+    - corsikaio >=0.3.3,<0.6a0
     - zstandard
 
 test:
