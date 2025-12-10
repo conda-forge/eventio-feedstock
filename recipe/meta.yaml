@@ -27,13 +27,12 @@ requirements:
     - pip
     - numpy >=2
     - cython
-    - corsikaio >=0.3.3,<0.6a0
     - setuptools
     - setuptools_scm >=3.4
   run:
     - python
     - numpy >=1.21
-    - corsikaio >=0.3.3,<0.6a0
+    - corsikaio >=0.3.3,<0.7a0
     - zstandard
 
 test:
