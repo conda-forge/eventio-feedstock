@@ -303,6 +303,3 @@ Feedstock Maintainers
 * [@kosack](https://github.com/kosack/)
 * [@maxnoe](https://github.com/maxnoe/)
 
-
-<!-- dummy commit to enable rerendering -->
-
